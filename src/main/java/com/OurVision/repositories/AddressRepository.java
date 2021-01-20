@@ -1,4 +1,4 @@
-package com.OurVision.models.repositories;
+package com.OurVision.repositories;
 
 import org.springframework.data.repository.CrudRepository;
 
