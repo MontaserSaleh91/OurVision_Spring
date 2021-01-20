@@ -48,7 +48,6 @@ public class NewPassport {
 	@Size(min=2, message="Please provide your profission")
 	private String profission;
 	
-	
 	@Lob
 	  private byte[] personal_image;
 	

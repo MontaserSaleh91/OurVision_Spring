@@ -47,7 +47,6 @@ public class ModifyPassport {
 	@Size(min=2, message="Please provide your type")
 	private String type;
 	
-	
 	@Lob
 	  private byte[] personal_image;
 	
