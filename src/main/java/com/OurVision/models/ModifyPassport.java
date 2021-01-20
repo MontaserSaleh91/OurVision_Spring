@@ -9,9 +9,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Future;
 import javax.validation.constraints.Size;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="modify_passport")
@@ -26,8 +30,9 @@ public class ModifyPassport {
 	@Size(min=8, message="Please provide a ID number")
 	private String id_number;
 	
-	@Size(min=1, message="Please provide a date of birth")
-	private String date_of_birth;
+	@Future
+	@DateTimeFormat(pattern ="yyyy-MM-dd")
+	private Date date_of_birth;
 	
 	
 	@Size(min=2, message="Please provide a place of birth")
@@ -41,6 +46,13 @@ public class ModifyPassport {
 	
 	@Size(min=2, message="Please provide your type")
 	private String type;
+	
+	
+	@Lob
+	  private byte[] personal_image;
+	
+	@Lob
+	  private byte[] id_image;
 	
 	@Column(updatable=false)
 	private Date createdAt;
@@ -80,11 +92,13 @@ public class ModifyPassport {
 		this.id_number = id_number;
 	}
 
-	public String getDate_of_birth() {
+	
+
+	public Date getDate_of_birth() {
 		return date_of_birth;
 	}
 
-	public void setDate_of_birth(String date_of_birth) {
+	public void setDate_of_birth(Date date_of_birth) {
 		this.date_of_birth = date_of_birth;
 	}
 
@@ -126,6 +140,24 @@ public class ModifyPassport {
 
 	public void setCitizen(User citizen) {
 		this.citizen = citizen;
+	}
+	
+	
+
+	public byte[] getPersonal_image() {
+		return personal_image;
+	}
+
+	public void setPersonal_image(byte[] personal_image) {
+		this.personal_image = personal_image;
+	}
+
+	public byte[] getId_image() {
+		return id_image;
+	}
+
+	public void setId_image(byte[] id_image) {
+		this.id_image = id_image;
 	}
 
 	public Date getCreatedAt() {
