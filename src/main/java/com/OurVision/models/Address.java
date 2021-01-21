@@ -26,6 +26,9 @@ public class Address {
 	@Size(min=2, message="Please provide a city")
 	private String city;
 	
+	@Size(min=6, message="Please provide a phone number")
+	private String phone_number;
+	
 	@Column(updatable=false)
 	private Date createdAt;
 	
@@ -60,6 +63,16 @@ public class Address {
 
 	public void setCity(String city) {
 		this.city = city;
+	}
+	
+	
+
+	public String getPhone_number() {
+		return phone_number;
+	}
+
+	public void setPhone_number(String phone_number) {
+		this.phone_number = phone_number;
 	}
 
 	public User getUser_address() {

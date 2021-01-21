@@ -14,7 +14,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
-import javax.validation.constraints.Future;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -34,7 +33,6 @@ public class NewPassport {
 	@Size(min=8, message="Please provide a ID number")
 	private String id_number;
 	
-	@Future
 	@DateTimeFormat(pattern ="yyyy-MM-dd")
 	private Date date_of_birth;
 	
@@ -49,10 +47,12 @@ public class NewPassport {
 	private String profission;
 	
 	@Lob
-	  private byte[] personal_image;
+	@Column(columnDefinition = "MEDIUMBLOB")
+	private String personal_image;
 	
 	@Lob
-	  private byte[] id_image;
+	@Column(columnDefinition = "MEDIUMBLOB")
+	private String id_image;
 	
 	
 	@Column(updatable=false)
@@ -135,20 +135,21 @@ public class NewPassport {
 	}
 	
 	
-
-	public byte[] getPersonal_image() {
+	public String getPersonal_image() {
 		return personal_image;
 	}
 
-	public void setPersonal_image(byte[] personal_image) {
+	public void setPersonal_image(String personal_image) {
 		this.personal_image = personal_image;
 	}
 
-	public byte[] getId_image() {
+	
+
+	public String getId_image() {
 		return id_image;
 	}
 
-	public void setId_image(byte[] id_image) {
+	public void setId_image(String id_image) {
 		this.id_image = id_image;
 	}
 

@@ -35,9 +35,6 @@ public class User {
 	@Size(min=1, message="Please provide a last name")
 	private String last_name;
 	
-	@Size(min=6, message="Please provide a phone number")
-	private String phone_number;
-	
 	
 	@Size(min=8, message="Password must be 8 characters or longer")
 	private String password;
@@ -91,13 +88,6 @@ public class User {
 		this.last_name = last_name;
 	}
 
-	public String getPhone_number() {
-		return phone_number;
-	}
-
-	public void setPhone_number(String phone_number) {
-		this.phone_number = phone_number;
-	}
 
 	public String getPassword() {
 		return password;

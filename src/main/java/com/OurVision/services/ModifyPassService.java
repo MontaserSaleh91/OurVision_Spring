@@ -3,18 +3,19 @@ package com.OurVision.services;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.OurVision.models.ModifyPassport;
-import com.OurVision.repositories.AddressRepository;
 import com.OurVision.repositories.ModifyPassRepository;
 
 public class ModifyPassService {
 	@Autowired
 	private ModifyPassRepository modifyRepo;
-	@Autowired
-	private AddressRepository aRepo;
 
 	
 	public ModifyPassport create(ModifyPassport modifypassport) {
 		return this.modifyRepo.save(modifypassport);
+	}
+	
+	public ModifyPassport findById(Long id) {
+		return this.modifyRepo.findById(id).orElse(null);
 	}
 	
 //	public Attach store(MultipartFile file) throws IOException {
