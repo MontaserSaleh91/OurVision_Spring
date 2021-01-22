@@ -45,14 +45,14 @@ public class NewPassport {
 	
 	@Size(min=2, message="Please provide your profission")
 	private String profission;
-	
-	@Lob
-	@Column(columnDefinition = "MEDIUMBLOB")
-	private String personal_image;
-	
-	@Lob
-	@Column(columnDefinition = "MEDIUMBLOB")
-	private String id_image;
+//	
+//	@Lob
+//	@Column(columnDefinition = "MEDIUMBLOB")
+//	private String personal_image;
+//	
+//	@Lob
+//	@Column(columnDefinition = "MEDIUMBLOB")
+//	private String id_image;
 	
 	
 	@Column(updatable=false)
@@ -135,23 +135,23 @@ public class NewPassport {
 	}
 	
 	
-	public String getPersonal_image() {
-		return personal_image;
-	}
-
-	public void setPersonal_image(String personal_image) {
-		this.personal_image = personal_image;
-	}
-
-	
-
-	public String getId_image() {
-		return id_image;
-	}
-
-	public void setId_image(String id_image) {
-		this.id_image = id_image;
-	}
+//	public String getPersonal_image() {
+//		return personal_image;
+//	}
+//
+//	public void setPersonal_image(String personal_image) {
+//		this.personal_image = personal_image;
+//	}
+//
+//	
+//
+//	public String getId_image() {
+//		return id_image;
+//	}
+//
+//	public void setId_image(String id_image) {
+//		this.id_image = id_image;
+//	}
 
 	public Date getCreatedAt() {
 		return createdAt;
