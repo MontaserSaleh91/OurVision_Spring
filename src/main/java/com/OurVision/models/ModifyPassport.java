@@ -45,13 +45,13 @@ public class ModifyPassport {
 	@Size(min=2, message="Please provide your type")
 	private String type;
 	
-	@Lob
-	@Column(columnDefinition = "MEDIUMBLOB")
-	private String personal_image;
-	
-	@Lob
-	@Column(columnDefinition = "MEDIUMBLOB")
-	private String id_image;
+//	@Lob
+//	@Column(columnDefinition = "MEDIUMBLOB")
+//	private String personal_image;
+//	
+//	@Lob
+//	@Column(columnDefinition = "MEDIUMBLOB")
+//	private String id_image;
 	
 	@Column(updatable=false)
 	private Date createdAt;
@@ -140,23 +140,23 @@ public class ModifyPassport {
 	public void setCitizen(User citizen) {
 		this.citizen = citizen;
 	}
-	
-	
-	public String getPersonal_image() {
-		return personal_image;
-	}
-
-	public void setPersonal_image(String personal_image) {
-		this.personal_image = personal_image;
-	}
-
-	public String getId_image() {
-		return id_image;
-	}
-
-	public void setId_image(String id_image) {
-		this.id_image = id_image;
-	}
+//	
+//	
+//	public String getPersonal_image() {
+//		return personal_image;
+//	}
+//
+//	public void setPersonal_image(String personal_image) {
+//		this.personal_image = personal_image;
+//	}
+//
+//	public String getId_image() {
+//		return id_image;
+//	}
+//
+//	public void setId_image(String id_image) {
+//		this.id_image = id_image;
+//	}
 
 	public Date getCreatedAt() {
 		return createdAt;

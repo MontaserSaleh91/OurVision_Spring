@@ -14,14 +14,14 @@
 <h1>Register</h1>
 	    <form:errors path="user.*"/>
 	    
-	    <form:form method="POST" action="/users" modelAttribute="user">
+	    <form:form method="POST" action="/registration" modelAttribute="user">
 	        <p>
-	            <form:label path="firstname">FirstName:</form:label>
-	            <form:input type="text" path="firstname"/>
+	            <form:label path="first_name">FirstName:</form:label>
+	            <form:input type="text" path="first_name"/>
 	        </p>
 	         <p>
-	            <form:label path="lastname">LastName:</form:label>
-	            <form:input type="text" path="lastname"/>
+	            <form:label path="last_name">LastName:</form:label>
+	            <form:input type="text" path="last_name"/>
 	        </p>
 	        <p>
 	            <form:label path="email">Email:</form:label>
@@ -50,20 +50,6 @@
 	        
 	    </form:form>
 
-	    <h1>Log In</h1>
-	    <p style="color: red;"><c:out value="${error}" /></p>
-	    
-	    <form method="post" action="/login">
-	        <p>
-	            <form:label path="name">Name:</form:label>
-	            <form:input type="text" path="name"/>
-	        </p>
-	        <p>
-	            <label for="password">Password</label>
-	            <input type="password" id="password" name="password"/>
-	        </p>
-	        <input type="submit" value="Login"/>
-	    </form>
-
+	   
 </body>
 </html>
