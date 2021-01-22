@@ -53,6 +53,9 @@ public class User {
 	@OneToMany(fetch= FetchType.LAZY, mappedBy="user_address")
 	private List<Address> addresses;
 	
+	@OneToMany(fetch= FetchType.LAZY, mappedBy="person")
+	private List<Personal_Id> persones;
+	
 	public User() {
 	}
 
