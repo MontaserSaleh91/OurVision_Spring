@@ -28,20 +28,25 @@ public class UserController {
 			this.userValidator = userValidator;
 		}
 		
-		@RequestMapping("/")
-		public String index(@ModelAttribute("user") User user) {
-			return "index.jsp";
+		@RequestMapping("/register")
+		public String register(@ModelAttribute("user") User user) {
+			return "reg.jsp";
+		}
+		
+		@RequestMapping("/login")
+		public String login(@ModelAttribute("user") User user) {
+			return "login.jsp";
 		}
 
 		@RequestMapping(value = "/registration", method = RequestMethod.POST)
 		public String registerUser(@Valid @ModelAttribute("user") User user, BindingResult result, HttpSession session) {
 			userValidator.validate(user, result);
 			if (result.hasErrors()) {
-				return "index.jsp";
+				return "redirect:/registration";
 			}
 			User u = userService.registerUser(user);
 			session.setAttribute("userId", u.getId());
-			return "redirect:/tasks";
+			return "redirect:/";
 		}
 
 		@RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -49,7 +54,7 @@ public class UserController {
 				HttpSession session, @ModelAttribute("user") User user) {
 			boolean isAuthenticated = userService.authenticateUser(email, password);
 			if (isAuthenticated) {
-				User u = userService.findByEmail(email);
+				User u = userService.getUserByEmail(email);
 				session.setAttribute("userId", u.getId());
 				return "redirect:/tasks";
 			} else {
